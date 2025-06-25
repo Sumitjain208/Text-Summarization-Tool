@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summarization Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Text Summarization Tool</h1>
+        <p>Paste your article or paragraph below and click "Summarize" to get a concise summary.</p>
+
+        <form method="POST">
+            <textarea name="text" rows="12" placeholder="Paste your text here..."></textarea>
+            <button type="submit">Summarize</button>
+        </form>
+
+        {% if summary %}
+        <div class="summary-box">
+            <h2>📄 Summary:</h2>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
